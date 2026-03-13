@@ -9,6 +9,5 @@ export type Bowler = {
     bowlerState: string
     bowlerZip: string
     bowlerPhoneNumber: string
-    teamID: number
     teamName: string
 }
