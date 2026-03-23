@@ -1,0 +1,5 @@
+bin/
+obj/
+*.sqlite
+.DS_Store
+.idea/
