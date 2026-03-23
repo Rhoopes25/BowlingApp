@@ -12,7 +12,7 @@ function BowlerList() {
 
     // Async function to fetch bowler data from the .NET API
     async function fetchBowlers() {
-        const response = await fetch('https://localhost:5000/api/bowlers')
+        const response = await fetch('http://localhost:5000/api/bowlers')
         const data = await response.json()
         setBowlers(data)
     }
