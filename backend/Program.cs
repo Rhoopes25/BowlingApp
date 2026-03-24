@@ -25,7 +25,8 @@ if (app.Environment.IsDevelopment())
 // Allow React app on port 3000 to make requests to this API
 // Without this, the browser would block all requests from React
 app.UseCors(x => x
-    .WithOrigins("http://localhost:3000")
+    .WithOrigins("http://localhost:5173", "http://localhost:3000")
+
     .AllowAnyMethod()
     .AllowAnyHeader());
 
