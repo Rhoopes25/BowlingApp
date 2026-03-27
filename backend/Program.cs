@@ -7,10 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddCors();
 
-// Register BowlingContext with SQLite using connection string from appsettings.json
-builder.Services.AddDbContext<BowlingContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("BowlingConnection")));
+// Build absolute path to the SQLite file so it works on any machine
+var dbPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "BowlingLeague.sqlite");
 
+builder.Services.AddDbContext<BowlingContext>(options =>
+    options.UseSqlite($"Data Source={dbPath}"));
 // Add OpenAPI/Swagger documentation
 builder.Services.AddOpenApi();
 
